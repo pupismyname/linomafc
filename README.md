@@ -31,3 +31,8 @@ spins up http://localhost:8080 and watches for changes
 npm run clean
 ```
 removes 11ty build folder, automatically run before `dev` and `build`
+
+
+## Deploy
+
+manual FTP. contact John if you need this info.
