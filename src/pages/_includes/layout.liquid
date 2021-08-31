@@ -1,13 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>eleventy-less-boilerplate</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <title>Linoma FC</title>
 </head>
 <body>
-  <main>
-    {{content}}
-  </main>
+
+  <div class="site">
+
+    <header>
+      <div class="columns lockup">
+        <div class="column lockup-piece lockup-title">
+          <h1 class="lockup-header">Linoma FC</h1>
+          <p>An amateur soccer club based in Omaha, NE, USA</p>
+        </div>
+        <div class="column lockup-piece lockup-logo">
+          <img class="lockup-image" src="/images/linoma-crest.png" alt="Linoma FC Logo">
+        </div>
+      </div>
+      <hr>
+    </header>
+
+    <main>
+      {{content}}
+    </main>
+
+    <footer>
+      <hr>
+      <div class="columns">
+
+        <div class="column footer-column u-align-center u-sm-align-left">
+          <p>Made with love in Omaha, NE</p>
+        </div>
+
+        <div class="column footer-column u-align-center u-sm-align-right">
+          <figure>
+            <blockquote>
+              Remember who you are and what you represent.
+              <figcaption>&mdash; Hettie Belle Ege</figcaption>
+            </blockquote>
+          </figure>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
 </body>
 </html>

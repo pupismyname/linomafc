@@ -2,7 +2,7 @@
 
 Website for Linoma FC.
 
-linomafc.com
+http://linomafc.com/
 
 
 ## Install
