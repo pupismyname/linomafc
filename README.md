@@ -1,8 +1,8 @@
-# eleventy-less-boilerplate
+# Linoma FC
 
-Build LESS with an 11ty transform. The magic happens in `.eleventy.js` and `src/pages/_less.liquid`.
+Website for Linoma FC.
 
-Also includes a very basic Gulp clean process.
+linomafc.com
 
 
 ## Install
