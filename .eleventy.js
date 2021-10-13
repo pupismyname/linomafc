@@ -1,4 +1,5 @@
 const less = require('less');
+var crypto = require("crypto");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
@@ -18,6 +19,17 @@ module.exports = function(eleventyConfig) {
       return await less.render(content).then(result => result.css);
     }
     return content;
+  });
+
+  // cache buster
+  // adapted from https://rob.cogit8.org/posts/2020-10-28-simple-11ty-cache-busting/
+  const bust = crypto.randomBytes(20).toString('hex');
+  this.bust = bust;
+  eleventyConfig.addFilter('bust', (url) => {
+    const [ urlPart, paramPart ] = url.split('?');
+    const params = new URLSearchParams(paramPart || '');
+    params.set('v', bust);
+    return `${urlPart}?${params}`;
   });
 
   return {

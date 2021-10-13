@@ -11,13 +11,15 @@ layout: layout.liquid
       <p>Tulsa, OK</p>
       <p>
         <a class="button" href="https://www.facebook.com/events/1502811626716931/">Facebook Event</a>
-        <a class="button" href="/files/Soktoberfest-2021-flyer.pdf">Flyer</a>
+        <a class="button" href="{{ '/files/Soktoberfest-2021-flyer.pdf' | bust }}">Flyer</a>
       </p>
     </div>
 
 {% comment %}
     <div class="column item">
-      <h2><a href="https://www.facebook.com/events/580514709658575/">Soktoberfest 2021 Fundraiser and Kick-Off Party!</a></h2>
+      <h2>
+        <a href="https://www.facebook.com/events/580514709658575/">Soktoberfest 2021 Fundraiser and Kick-Off Party!</a>
+      </h2>
       <h3>October 9, 2021</h3>
       <p>
         Goldeez<br>
@@ -25,7 +27,7 @@ layout: layout.liquid
       </p>
       <p>
         <a class="button" href="https://www.facebook.com/events/580514709658575/">Facebook Event</a>
-        <a class="button" href="/files/Soktoberfest-2021-Fundraiser-and-Kick-Off-Party.pdf">Flyer</a>
+        <a class="button" href="{{ '/files/Soktoberfest-2021-Fundraiser-and-Kick-Off-Party.pdf' | bust }}">Flyer</a>
       </p>
     </div>
  {% endcomment %}
@@ -37,7 +39,7 @@ layout: layout.liquid
         <li class="sponsor-item">
           <a href="https://www.floriosne.com/">
             <img
-              src="/images/sponsors/florios.png"
+              src="{{ '/images/sponsors/florios.png' | bust }}"
               alt="Florio's Italian Restaurant"
               title="Florio's Italian Restaurant"
               class="sponsor-img"
@@ -47,7 +49,7 @@ layout: layout.liquid
         <li class="sponsor-item">
           <a href="https://www.ookla.com/">
             <img
-              src="/images/sponsors/ookla.svg"
+              src="{{ '/images/sponsors/ookla.svg' | bust }}"
               alt="Ookla"
               title="Ookla"
               class="sponsor-img"

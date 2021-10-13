@@ -2,20 +2,45 @@
 <html lang="en">
 <head>
   <!-- preload subsets of ubuntu fonts -->
-  <link rel="preload" href="/fonts/Ubuntu-Regular-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/Ubuntu-Bold-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link
+    rel="preload"
+    href="{{ '/fonts/Ubuntu-Regular-kern-latin.woff2' | bust }}"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  >
+  <link
+    rel="preload"
+    href="{{ '/fonts/Ubuntu-Bold-kern-latin.woff2' | bust }}"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  >
   <!-- preload full cloister black because it's only slightly bigger than the subset -->
-  <link rel="preload" href="/fonts/CloisterBlack-hint-all.woff2" as="font" type="font/woff2" crossorigin>
+  <link
+    rel="preload"
+    href="{{ '/fonts/CloisterBlack-hint-all.woff2' | bust }}"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  >
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <link rel="stylesheet" type="text/css" href="{{ '/css/main.css' | bust }}">
   <title>Linoma FC</title>
   <!-- lazily swap in full ubuntu font files -->
   <script>
     if ("fonts" in document) {
       // add weights here, one per line
-      var regular = new FontFace("Ubuntu", "url(/fonts/Ubuntu-Regular-hint-all.woff2) format('woff2')");
-      var bold = new FontFace("Ubuntu", "url(/fonts/Ubuntu-Bold-hint-all.woff2) format('woff2')", { weight: "700" });
+      var regular = new FontFace(
+        "Ubuntu",
+        "url({{'/fonts/Ubuntu-Regular-hint-all.woff2' | bust }}) format('woff2')"
+      );
+      var bold = new FontFace(
+        "Ubuntu",
+        "url({{'/fonts/Ubuntu-Bold-hint-all.woff2' | bust }}) format('woff2')",
+        { weight: "700" }
+      );
       // also add weights here
       Promise.all([
         bold.load(),
