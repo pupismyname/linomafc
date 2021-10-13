@@ -1,10 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- preload subsets of ubuntu fonts -->
+  <link rel="preload" href="/fonts/Ubuntu-Regular-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Ubuntu-Bold-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- preload full cloister black because it's only slightly bigger than the subset -->
+  <link rel="preload" href="/fonts/CloisterBlack-hint-all.woff2" as="font" type="font/woff2" crossorigin>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="/css/main.css">
   <title>Linoma FC</title>
+  <!-- lazily swap in full ubuntu font files -->
+  <script>
+    if ("fonts" in document) {
+      // add weights here, one per line
+      var regular = new FontFace("Ubuntu", "url(/fonts/Ubuntu-Regular-hint-all.woff2) format('woff2')");
+      var bold = new FontFace("Ubuntu", "url(/fonts/Ubuntu-Bold-hint-all.woff2) format('woff2')", { weight: "700" });
+      // also add weights here
+      Promise.all([
+        bold.load(),
+        regular.load()
+      ]).then(function(fonts) {
+        fonts.forEach(function(font) {
+          document.fonts.add(font);
+        });
+      });
+    }
+  </script>
 </head>
 <body>
 
@@ -14,7 +36,7 @@
       <div class="columns lockup">
         <div class="column lockup-piece lockup-title">
           <h1 class="lockup-header">Linoma FC</h1>
-          <p>An amateur soccer club based in Omaha, NE, USA</p>
+          <p><span class="u-avoid-break">An amateur adult soccer club based in</span> <span class="u-avoid-break">Omaha, NE, USA</span></p>
         </div>
         <div class="column lockup-piece lockup-logo">
           <img class="lockup-image" src="/images/linoma-crest.png" alt="Linoma FC Logo">
