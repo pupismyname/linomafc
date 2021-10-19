@@ -1,5 +1,7 @@
 @import (inline) 'node_modules/normalize.css/normalize.css';
 
+// variables
+
 // originally from https://purecss.io/grids/#pure-responsive-grids
 @breakpoint-sm: 35.5em; //  568px
 @breakpoint-md: 48em;   //  768px
@@ -17,12 +19,19 @@
 @retina: ~"(-webkit-min-device-pixel-ratio: 1.25) and (min-resolution: 120dpi)";
 
 @white: #fff;
+@gray: #ddd;
 @black: #333;
-@original: #b80619;
-@lighter: saturate(tint(@original, 25%), 25%);
+@color: #b80619;
+@lighter: saturate(tint(@color, 25%), 25%);
 @darker: shade(@lighter, 10%);
 
 @slashes: repeating-linear-gradient(45deg, @lighter, @lighter 2rem, @darker 2rem, @darker 4rem);
+
+@site-width: 84rem;
+
+// end variables
+
+// fonts
 
 // don't use font subset for cloister black because full font is only slightly bigger
 @font-face {
@@ -48,24 +57,85 @@
   font-display: swap;
 }
 
+// end fonts
+
+// setup
+
 :root {
   --basefont: 8px;
   @media @mq-md { --basefont: 10px; }
   @media @mq-lg { --basefont: 12px; }
   // @media @mq-xl { --basefont: 14px; }
   font-size: var(--basefont);
-  --site-width: 60em;
+  box-sizing: border-box;
 }
 
+// end setup
+
+// layout
+
 body {
-  box-sizing: border-box;
   font-family: Ubuntu, sans-serif;
-  line-height: 1.4;
+  line-height: 1.6;
   background: @slashes;
   color: @black;
   margin: 0;
   padding: 0;
 }
+
+.site {
+  @media @mq-xl {
+    max-width: @site-width;
+  }
+  margin: 0 auto;
+  background: @white;
+  padding: 1rem 2rem;
+  min-height: 120vh;
+  border-width: 0 2rem;
+  @media @mq-sm {
+    border-width: 0 4rem;
+  }
+  border-color: transparent;
+  border-style: solid;
+  background-clip: padding-box;
+  font-size: 1.4rem;
+}
+
+main {
+  margin-top: 1rem;
+}
+
+.columns {
+  @media @mq-sm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+}
+
+.column {
+  @media @mq-sm {
+    flex: 1;
+    min-width: 21rem;
+  }
+  :where(main) & {
+    border-top: 0.5rem solid @gray;
+    &:first-child {
+      border-top: none;
+    }
+    @media @mq-sm {
+      border-top: none;
+    }
+  }
+}
+
+.item {
+  padding: 2rem 0;
+}
+
+// end layout
+
+// general styles
 
 a {
   color: @darker;
@@ -115,43 +185,6 @@ blockquote {
   padding: 0;
 }
 
-.site {
-  @media @mq-xl {
-    max-width: var(--site-width);
-  }
-  margin: 0 auto;
-  background: @white;
-  padding: 1rem 2rem;
-  min-height: 120vh;
-  border-width: 0 2rem;
-  @media @mq-sm {
-    border-width: 0 4rem;
-  }
-  border-color: transparent;
-  border-style: solid;
-  background-clip: padding-box;
-  font-size: 1.4rem;
-}
-
-main {
-  margin-top: 1rem;
-}
-
-.columns {
-  @media @mq-sm {
-    display: flex;
-    gap: 2rem;
-  }
-}
-
-.column {
-  flex: 1;
-}
-
-.footer-column {
-  font-size: 1.2rem;
-}
-
 h2 {
   color: @darker;
   line-height: 1.2;
@@ -175,14 +208,11 @@ hr {
   text-decoration: none;
   font-weight: 700;
   padding: 0.7rem 1.4rem;
+  margin: 0 0.2rem 0.2em 0;
   &:hover, &:focus {
     background: @lighter;
     color: @white;
   }
-}
-
-.item {
-  padding: 2rem 0;
 }
 
 // lockup
@@ -220,28 +250,42 @@ hr {
   font-size: 6rem;
 }
 
+// end lockup
+
+// footer
+
+.footer-column {
+  font-size: 1.2rem;
+}
+
+// end footer
+
 // sponsors
 
 .sponsor-list {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  gap: 2rem;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  max-width: 100%;
 }
 
-.sponsor-item {
-  flex: 1;
-  max-width: 15em;
-  min-width: 8em;
+.sponsor-link {
+  display: block;
+  width: 100%;
 }
 
 .sponsor-img {
-  // max-width: 150px;
+  max-width: 20rem;
+  max-height: 5em;
+  border: 1px solid transparent;
+  padding: 1rem;
+  margin-left: ~"calc(-1rem - 1px)";
 }
+
+:where(a:hover) .sponsor-img {
+  border: 1px solid @lighter;
+}
+
+// end sponsors
 
 // utilities
 
@@ -272,3 +316,13 @@ hr {
 .make-u-align-classes(left);
 .make-u-align-classes(right);
 .make-u-align-classes(center);
+
+// discourage linebreaks if possible
+// example:
+// <span class="u-avoid-break">break after</span> <span class="u-avoid-break">break before</span>
+//        word wrap is encouraged to happen here ^
+.u-avoid-break {
+  display: inline-block;
+}
+
+// end utilities
