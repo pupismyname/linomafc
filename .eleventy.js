@@ -1,5 +1,6 @@
 const less = require('less');
-var crypto = require("crypto");
+const crypto = require("crypto");
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
@@ -7,6 +8,8 @@ module.exports = function(eleventyConfig) {
     'src/fonts': '/fonts',
     'src/files': '/files',
   });
+
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
   eleventyConfig.addWatchTarget("./src/less/");
   eleventyConfig.addWatchTarget("./src/images/");

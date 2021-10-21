@@ -27,7 +27,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="{{ '/css/main.css' | bust }}">
-  <title>Linoma FC</title>
+  <title>{{title}}</title>
   <!-- lazily swap in full ubuntu font files -->
   <script>
     if ("fonts" in document) {
@@ -60,11 +60,11 @@
     <header>
       <div class="columns lockup">
         <div class="column lockup-piece lockup-title">
-          <h1 class="lockup-header">Linoma FC</h1>
+          <h1 class="lockup-header"><a href="/">Linoma FC</a></h1>
           <p><span class="u-avoid-break">An amateur adult soccer club based in</span> <span class="u-avoid-break">Omaha, NE, USA</span></p>
         </div>
         <div class="column lockup-piece lockup-logo">
-          <img class="lockup-image" src="/images/linoma-crest.png" alt="Linoma FC Logo">
+          <a href="/"><img class="lockup-image" src="/images/linoma-crest.png" alt="Linoma FC Logo"></a>
         </div>
       </div>
       <hr>
@@ -78,15 +78,19 @@
       <hr>
       <div class="columns">
 
-        <div class="column footer-column u-align-center u-sm-align-left">
+        <div class="column footer-column">
+          {{ collections.all | eleventyNavigation | eleventyNavigationToHtml }}
+        </div>
+
+        <div class="column footer-column u-align-left u-sm-align-center">
           <p><a href="https://www.github.com/pupismyname/linomafc">Made with love in Omaha, NE</a></p>
         </div>
 
-        <div class="column footer-column u-align-center u-sm-align-right">
+        <div class="column footer-column u-align-left u-sm-align-right">
           <figure>
             <blockquote>
-              Remember who you are and what you represent.
-              <figcaption>&mdash; Hettie Belle Ege</figcaption>
+              <p>"Remember who you are and what you represent."</p>
+              <blockquote><p>Hettie Belle Ege</p></blockquote>
             </blockquote>
           </figure>
         </div>
