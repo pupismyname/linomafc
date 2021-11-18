@@ -105,6 +105,14 @@ main {
   margin-top: 1rem;
 }
 
+section {
+  padding: 2rem 0;
+  border-top: 0.5rem solid @black;
+  &:first-of-type {
+    border-top: none;
+  }
+}
+
 .columns {
   @media @mq-sm {
     display: flex;
@@ -116,31 +124,18 @@ main {
 .column {
   @media @mq-sm {
     flex: 1 0 0;
-    min-width: 21rem;
   }
   :where(main) & {
     border-top: 0.5rem solid @gray;
-    &:first-child {
-      border-top: none;
-    }
-    @media @mq-sm {
-      border-top: none;
-    }
+  }
+  :where(.columns:first-child) & {
+    border-top: none;
   }
 }
 
-.column-50 {
+.column-1 {
   @media @mq-sm {
-    width: 50%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-}
-
-.item {
-  padding: 2rem 0;
-  @media @mq-sm {
-    padding: 0;
+    min-width: 100%;
   }
 }
 
@@ -192,7 +187,6 @@ figure {
 }
 
 h2 {
-  color: @darker;
   line-height: 1.2;
 }
 
@@ -267,7 +261,7 @@ blockquote {
 .lockup-image {
   display: inline-block;
   max-width: 100%;
-  max-height: 30rem;
+  max-height: 20rem;
   object-fit: scale-down;
 }
 
@@ -287,6 +281,17 @@ blockquote {
 :where(header) hr {
   background: @black;
   margin: 1rem 0;
+}
+
+:where(header nav) ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+:where(header nav) li {
+  padding: 0;
+  margin: 0 0.5em 0 0;
+  display: inline-block;
 }
 
 // end lockup
@@ -311,15 +316,21 @@ blockquote {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.sponsor-item {
+  display: inline-block;
 }
 
 .sponsor-link {
-  display: block;
-  width: 100%;
+  display: inline-block;
 }
 
 .sponsor-img {
-  max-width: 20rem;
+  max-width: 18rem;
   max-height: 5em;
   border: 1px solid transparent;
   padding: 1rem;

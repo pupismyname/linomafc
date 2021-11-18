@@ -1,9 +1,9 @@
 ---
 layout: layout.liquid
-title: History of Linoma FC
+title: "Linoma FC - History"
 eleventyNavigation:
   key: History
-  order: 2
+  order: 3
 ---
 
 

@@ -1,30 +1,45 @@
 ---
 layout: layout.liquid
-title: Linoma FC
+title: "Linoma FC"
 eleventyNavigation:
   key: Home
   order: 1
 ---
 
 <section>
+
+  <h2>Events</h2>
+
   <div class="columns">
 
-    <div class="column item">
-      <h2><a href="https://www.facebook.com/events/1502811626716931/">SoktoberFest 2021</a></h2>
-      <h3>October 22-24, 2021</h3>
+    <div class="column">
+      <p>Nothing at the moment, but check back soon!</p>
+    </div>
+
+    {% comment %}
+    <div class="column">
+      <h3>
+        <a href="https://www.facebook.com/events/1502811626716931/">
+          SoktoberFest 2021
+        </a>
+      </h3>
+      <h4>October 22-24, 2021</h4>
       <p>Tulsa, OK</p>
       <p>
         <a class="button" href="https://www.facebook.com/events/1502811626716931/">Facebook Event</a>
         <a class="button" href="{{ '/files/Soktoberfest-2021-flyer.pdf' | bust }}">Flyer</a>
       </p>
     </div>
+    {% endcomment %}
 
-{% comment %}
-    <div class="column item">
-      <h2>
-        <a href="https://www.facebook.com/events/580514709658575/">Soktoberfest 2021 Fundraiser and Kick-Off Party!</a>
-      </h2>
-      <h3>October 9, 2021</h3>
+    {% comment %}
+    <div class="column">
+      <h3>
+        <a href="https://www.facebook.com/events/580514709658575/">
+          Soktoberfest 2021 Fundraiser and Kick-Off Party!
+        </a>
+      </h3>
+      <h4>October 9, 2021</h4>
       <p>
         Goldeez<br>
         5502 N 103rd St, Omaha, NE 68134
@@ -34,12 +49,42 @@ eleventyNavigation:
         <a class="button" href="{{ '/files/Soktoberfest-2021-Fundraiser-and-Kick-Off-Party.pdf' | bust }}">Flyer</a>
       </p>
     </div>
- {% endcomment %}
+    {% endcomment %}
 
-    <div class="column item">
-      <h2>Sponsors</h2>
-      <p>Thank you to our Tier 1 sponsors!</p>
+  </div>
+
+</section>
+
+<section>
+
+  <h2>Sponsors</h2>
+  <p>Want to become a sponsor? Please <a href="mailto:contact@linomafc.com">contact us</a>.</p>
+
+  <div class="columns">
+
+    <div class="column">
+      <h3>Tier 1 sponsors</h3>
       <ul class="sponsor-list">
+        <li class="sponsor-item">
+          <a href="#" class="sponsor-link">
+            <img
+              src="{{ '/images/sponsors/mainelli.png' | bust }}"
+              alt="Mainelli Mechanical"
+              title="Mainelli Mechanical"
+              class="sponsor-img"
+            >
+          </a>
+        </li>
+        <li class="sponsor-item">
+          <a href="#" class="sponsor-link">
+            <img
+              src="{{ '/images/sponsors/mac.png' | bust }}"
+              alt="Maple Athletic Complex"
+              title="Maple Athletic Complex"
+              class="sponsor-img"
+            >
+          </a>
+        </li>
         <li class="sponsor-item">
           <a href="https://www.qcromaha.com/" class="sponsor-link">
             <img
@@ -71,19 +116,48 @@ eleventyNavigation:
           </a>
         </li>
       </ul>
-      <p>For more information about becoming a sponsor, please <a href="mailto:contact@linomafc.com">contact us</a>.</p>
     </div>
 
-    <div class="column item">
-      {% comment %} <hr> {% endcomment %}
-      <h2>Other Information</h2>
-      <ul>
-        <li><a href="/history/">History of Linoma FC</a></li>
-        <li>Email: <a href="mailto:contact@linomafc.com">contact@linomafc.com</a></li>
-        <li>Venmo: <a href="https://venmo.com/linomafc">@LinomaFC</a></li>
-        <li><a href="https://sites.google.com/a/nebraskasoccer.net/nmsl/home/schedule">NMSL Schedule</a></li>
+    <div class="column">
+      <h3>Tier 2 sponsors</h3>
+      <ul class="sponsor-list">
+        <li class="sponsor-item">
+          <a href="#" class="sponsor-link">
+            <img
+              src="{{ '/images/sponsors/otw.png' | bust }}"
+              alt="Off the Wall"
+              title="Off the Wall"
+              class="sponsor-img"
+            >
+          </a>
+        </li>
       </ul>
     </div>
 
   </div>
+
+</section>
+
+<section>
+
+  <div class="columns">
+
+    <div class="column">
+      <h2>Schedules</h2>
+      <ul>
+        <li><a href="https://sites.google.com/a/nebraskasoccer.net/nmsl/home/schedule">Nebraska Men's Soccer League</a></li>
+        <li><a href="https://www.teamsideline.com/sites/MapleAthleticComplex/schedules">Maple Athletic Complex</a></li>
+      </ul>
+    </div>
+
+    <div class="column">
+      <h2>Contact</h2>
+      <ul>
+        <li>Email: <a href="mailto:contact@linomafc.com">contact@linomafc.com</a></li>
+        <li>Venmo: <a href="https://venmo.com/linomafc">@LinomaFC</a></li>
+      </ul>
+    </div>
+
+  </div>
+
 </section>

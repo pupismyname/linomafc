@@ -62,6 +62,9 @@
         <div class="column lockup-piece lockup-title">
           <h1 class="lockup-header"><a href="/">Linoma FC</a></h1>
           <p><span class="u-avoid-break">An amateur adult soccer club based in</span> <span class="u-avoid-break">Omaha, NE, USA</span></p>
+          <nav>
+            {{ collections.all | eleventyNavigation | eleventyNavigationToHtml }}
+          </nav>
         </div>
         <div class="column lockup-piece lockup-logo">
           <a href="/"><img class="lockup-image" src="/images/linoma-crest.png" alt="Linoma FC Logo"></a>
