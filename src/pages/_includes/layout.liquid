@@ -63,7 +63,7 @@
           <h1 class="lockup-header"><a href="/">Linoma FC</a></h1>
           <p><span class="u-avoid-break">An amateur adult soccer club based in</span> <span class="u-avoid-break">Omaha, NE, USA</span></p>
           <nav>
-            {{ collections.all | eleventyNavigation | eleventyNavigationToHtml }}
+            {%- include nav -%}
           </nav>
         </div>
         <div class="column lockup-piece lockup-logo">
@@ -81,15 +81,16 @@
       <hr>
       <div class="columns">
 
-        <div class="column footer-column">
-          {{ collections.all | eleventyNavigation | eleventyNavigationToHtml }}
+        <div class="column footer-column u-align-center u-sm-align-left ">
+          <nav>
+            {%- include nav -%}
         </div>
 
-        <div class="column footer-column u-align-left u-sm-align-center">
+        <div class="column footer-column u-align-center u-sm-align-right u-xl-align-center">
           <p><a href="https://www.github.com/pupismyname/linomafc">Made with love in Omaha, NE</a></p>
         </div>
 
-        <div class="column footer-column u-align-left u-sm-align-right">
+        <div class="column footer-column u-align-center u-sm-align-right">
           <figure>
             <blockquote>
               <p>"Remember who you are and what you represent."</p>

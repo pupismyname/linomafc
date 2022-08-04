@@ -37,7 +37,7 @@ module.exports = function(eleventyConfig) {
 
   return {
     dir: {
-      input: 'src/pages'
-    }
+      input: 'src/pages',
+    },
   };
 };
