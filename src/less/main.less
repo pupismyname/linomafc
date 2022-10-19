@@ -322,8 +322,9 @@ blockquote {
 // end footer
 
 // sponsors
+// (not called "sponsors" to avoid adblock rules)
 
-.sponsor-list {
+.sp-list {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -332,15 +333,15 @@ blockquote {
   justify-content: space-around;
 }
 
-.sponsor-item {
+.sp-item {
   display: inline-block;
 }
 
-.sponsor-link {
+.sp-link {
   display: inline-block;
 }
 
-.sponsor-img {
+.sp-img {
   max-width: 18rem;
   max-height: 5em;
   border: 1px solid transparent;
@@ -348,7 +349,7 @@ blockquote {
   margin-left: ~"calc(-1rem - 1px)";
 }
 
-:where(a:hover, a:focus) .sponsor-img {
+:where(a:hover, a:focus) .sp-img {
   border: 1px solid @lighter;
 }
 

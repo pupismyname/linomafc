@@ -29,6 +29,8 @@ eleventyNavigation:
       <p>
         <a class="button" href="https://www.facebook.com/events/1386299091864399/">Facebook Event</a>
         <a class="button" href="{{ '/files/Soktoberfest-2022-flyer.pdf' | bust }}">Flyer</a>
+        <a class="button" href="{{ '/files/linoma-schedule-2022.png' | bust }}">Game Schedule</a>
+        <a class="button" href="https://neoasa.org/soktoberfest">Tournament</a>
       </p>
     </div>
 
@@ -79,54 +81,56 @@ eleventyNavigation:
 
     <div class="column">
       <h3>Tier 1 sponsors</h3>
-      <ul class="sponsor-list">
-        <li class="sponsor-item">
-          <a href="#" class="sponsor-link">
+      <ul class="sp-list">
+        {% comment %}
+        <li class="sp-item">
+          <a href="#" class="sp-link">
             <img
               src="{{ '/images/sponsors/mainelli.png' | bust }}"
               alt="Mainelli Mechanical"
               title="Mainelli Mechanical"
-              class="sponsor-img"
+              class="sp-img"
             >
           </a>
         </li>
-        <li class="sponsor-item">
-          <a href="#" class="sponsor-link">
-            <img
-              src="{{ '/images/sponsors/mac.png' | bust }}"
-              alt="Maple Athletic Complex"
-              title="Maple Athletic Complex"
-              class="sponsor-img"
-            >
-          </a>
-        </li>
-        <li class="sponsor-item">
-          <a href="https://www.qcromaha.com/" class="sponsor-link">
-            <img
-              src="{{ '/images/sponsors/qcr.png' | bust }}"
-              alt="QCR Omaha"
-              title="QCR Omaha"
-              class="sponsor-img"
-            >
-          </a>
-        </li>
-        <li class="sponsor-item">
-          <a href="https://www.floriosne.com/" class="sponsor-link">
-            <img
-              src="{{ '/images/sponsors/florios.png' | bust }}"
-              alt="Florio's Italian Restaurant"
-              title="Florio's Italian Restaurant"
-              class="sponsor-img"
-            >
-          </a>
-        </li>
-        <li class="sponsor-item">
-          <a href="https://www.ookla.com/" class="sponsor-link">
+        {% endcomment %}
+        <li class="sp-item">
+          <a href="https://www.ookla.com/" class="sp-link">
             <img
               src="{{ '/images/sponsors/ookla.svg' | bust }}"
               alt="Ookla"
               title="Ookla"
-              class="sponsor-img"
+              class="sp-img"
+            >
+          </a>
+        </li>
+        <li class="sp-item">
+          <a href="https://www.floriosne.com/" class="sp-link">
+            <img
+              src="{{ '/images/sponsors/florios.png' | bust }}"
+              alt="Florio's Italian Restaurant"
+              title="Florio's Italian Restaurant"
+              class="sp-img"
+            >
+          </a>
+        </li>
+        <li class="sp-item">
+          <a href="https://www.mapleathleticcomplex.com/" class="sp-link">
+            <img
+              src="{{ '/images/sponsors/mac.png' | bust }}"
+              alt="Maple Athletic Complex"
+              title="Maple Athletic Complex"
+              class="sp-img"
+            >
+          </a>
+        </li>
+        <li class="sp-item">
+          <a href="https://www.facebook.com/people/Modern-COOL-Designs-LLC/100063749843033/" class="sp-link">
+            <img
+              src="{{ '/images/sponsors/mcd.svg' | bust }}"
+              alt="Modern COOL Designs, LLC"
+              title="Modern COOL Designs, LLC"
+              class="sp-img"
             >
           </a>
         </li>
@@ -135,14 +139,34 @@ eleventyNavigation:
 
     <div class="column">
       <h3>Tier 2 sponsors</h3>
-      <ul class="sponsor-list">
-        <li class="sponsor-item">
-          <a href="#" class="sponsor-link">
+      <ul class="sp-list">
+        <li class="sp-item">
+          <a href="#" class="sp-link">
             <img
               src="{{ '/images/sponsors/otw.png' | bust }}"
               alt="Off the Wall"
               title="Off the Wall"
-              class="sponsor-img"
+              class="sp-img"
+            >
+          </a>
+        </li>
+        <li class="sp-item">
+          <a href="https://www.qcromaha.com/" class="sp-link">
+            <img
+              src="{{ '/images/sponsors/qcr.png' | bust }}"
+              alt="QCR Omaha"
+              title="QCR Omaha"
+              class="sp-img"
+            >
+          </a>
+        </li>
+        <li class="sp-item">
+          <a href="https://www.facebook.com/BlueTurtleTulsa" class="sp-link">
+            <img
+              src="{{ '/images/sponsors/blueturtle.jpg' | bust }}"
+              alt="Blue Turtle tavern"
+              title="Blue Turtle tavern"
+              class="sp-img"
             >
           </a>
         </li>
